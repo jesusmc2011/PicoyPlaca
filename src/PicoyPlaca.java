@@ -106,6 +106,17 @@ public class PicoyPlaca {
         return PP_DISTRIBUTION.get(getDayOfWeek()).contains(this.getLastNumber());
     }
 
+    public String infoNoApply(){
+        String[] dias = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes"};
+        String res = "Su automovil no aplica PICO y PLACA los dias: \n";
+        for (int i=1; i<=5; i++){
+            if (!PP_DISTRIBUTION.get(i).contains(this.getLastNumber()))
+                res += " " + dias[i-1] + " - No aplica.\n";
+        }
+        res += "Recuerde que el horario de pico y placa comprede desde las 07:30 - 09:30 en la mañana y desde las 16:00 - 19:30 en la tarde: \n";
+        return res;
+    }
+
     public boolean apply(){
         return applyByDate() && applyByTime();
     }

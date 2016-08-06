@@ -21,8 +21,12 @@ public class Plate{
     public void canRoad(String date, String time){
         PicoyPlaca pp = new PicoyPlaca(this.getPlateNumber(), date, time);
         if (pp.apply())
-            System.out.printf("Aplica Pico y Placa, no puede circular a esa hora %s", time);
+            System.out.printf("Hoy Aplica Pico y Placa, no puede circular a esa hora %s", time);
         else
-            System.out.println("No Aplica Pico y Placa");
+            System.out.println("Hoy no Aplica Pico y Placa");
+
+        System.out.println(pp.infoNoApply());
+
+
     }
 }
